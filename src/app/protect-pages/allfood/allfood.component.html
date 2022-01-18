@@ -1,0 +1,22 @@
+<div >
+    <table class="table ">
+      <thead>
+        <tr>
+          <th scope="col">Food Name</th>
+          <th scope="col">Food Price</th>
+          <th scope="col">Food Image</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of foodArray">
+          <td>{{user.foodName}}</td>
+          <td>{{user.foodPrice | currency:"INR"}}</td>
+          <td><img src="assets/foodImages/{{user.foodImage}}" height="150" width="150"></td>
+          <div>
+            <button [disabled] ="user?.addedToCart" (click)="addToCart(user)">Add to Cart</button> &nbsp;
+          </div>    
+        </tr>
+      </tbody>
+    </table>
+  </div>

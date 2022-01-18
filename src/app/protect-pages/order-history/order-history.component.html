@@ -1,0 +1,25 @@
+
+<table class="table ">
+    <thead>
+      <tr>
+        <th scope="col">Resetaurant Name</th>
+        <th scope="col">Data and Time</th>
+        <th scope="col">Food Name</th>
+        <th scope="col">Food Price</th>
+        <th scope="col">Food Quantity</th>
+        <th scope="col">Food Image</th>
+        <th scope="col">DeliveryBoy Name</th>
+      </tr>
+    </thead>
+    <tbody class="border" *ngFor="let user of foodOrders">
+      <tr *ngFor="let orders of user.userDetails">
+        <td>{{orders.restaurantName}}</td>
+        <td>{{user.registerDate | date:"medium"}}</td>
+        <td>{{orders.foodName}}</td>
+        <td>{{orders.foodPrice | currency:"INR"}}</td>
+        <td>{{orders.cartQty}}</td>
+        <td><img src="assets/foodImages/{{orders.foodImage}}" height="150" width="150"></td>
+        <td>{{user.deliveryBoyName}}</td>
+      </tr>
+    </tbody>
+  </table>

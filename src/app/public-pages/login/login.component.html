@@ -1,0 +1,28 @@
+<div class="card">
+  <h2 class="textColor">LOGIN</h2>
+</div>
+<br><br>
+<div class="box">
+  <form [formGroup]="loginForm">
+    <!-- Email  -->
+    <div class="form-outline mb-4" class="textBox">
+      <input type="email" formControlName="mail" id="form3Example3" class="form-control form-control-lg"
+        placeholder="EMAIL ID" />
+      <p class="error-block" *ngIf="!loginForm.get('mail').valid && (loginForm.get('mail').touched || userSubmited)">
+        Please enter Mail id
+      </p>
+    </div><br>
+    <!-- Password  -->
+    <div class="form-outline mb-3" class="textBox">
+      <input type="password" formControlName="password" id="form3Example4" class="form-control form-control-lg"
+        placeholder="PASSWORD" />
+      <p class="error-block"
+        *ngIf="!loginForm.get('password').valid && (loginForm.get('password').touched || userSubmited)">
+        Please enter password</p>
+    </div>
+    <div class="text-center text-lg-start mt-4 pt-2">
+      <button type="button" class="btn btn-success btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem;"
+        (click)="OnLogin()"> Login </button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,216 @@
+<nav class="navbar navbar-expand-sm bg-header navbar-dark">
+  <div class="main-header">
+    <div class="login-nav">
+      <ul class="navbar-nav" *ngIf="!userRoleId">
+        <li><a class="nav-link" routerLink="/" routerLinkActive="active">Login</a></li>
+        <li><a class="nav-link" routerLink="/register" routerLinkActive="active">Register</a></li>
+      </ul>
+    </div>
+    <div class="main-nav">
+      <div class="nav-left">
+        <ul class="navbar-nav" *ngIf="userRoleId == '1'">
+          <li><a class="nav-link sv" routerLink="/allrestaurant" routerLinkActive="active">All Restaurants</a></li>
+          <li><a class="nav-link sv" routerLink="/adminBlockrestaurat" routerLinkActive="active">Block Restaurants</a></li>
+          <li><a class="nav-link" routerLink="/profile" routerLinkActive="active">Profile</a></li>
+        </ul>
+      </div>
+      <div class="nav-right">
+        <ul class="navbar-nav" *ngIf="userRoleId == '1'">
+          <li><a class="nav-link" routerLinkActive="active"> {{userName }}</a></li>
+          <li><a class="nav-link" routerLinkActive="active">Role Id : {{1}}</a></li>
+          <li><a class="text"><img (click)="doLogOut()" src="assets/box-arrow-right.svg" height="40" width="40"></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<nav class="navbar navbar-expand-sm bg-header navbar-dark">
+  <div class=" navbar-collapse">
+    <div class="main-nav">
+      <div class="nav-left">
+        <ul class="navbar-nav" *ngIf="userRoleId == '2'">
+          <li><a class="nav-link" routerLink="/myrestaurant" routerLinkActive="active">My Restaurant</a></li>
+          <li><a class="nav-link" routerLink="/restaurantOrders" routerLinkActive="active">Restaurant-Orders</a></li>
+          <li><a class="nav-link" routerLink="/profile" routerLinkActive="active">Profile</a></li>
+        </ul>
+      </div>
+      <div class="nav-right">
+        <ul class="navbar-nav" *ngIf="userRoleId == '2'">
+          <li><a class="nav-link" routerLinkActive="active"> {{userName }}</a></li>
+          <li><a class="nav-link" routerLinkActive="active">Role Id : {{2}}</a></li>
+          <li><a class="text"><img (click)="doLogOut()" src="assets/box-arrow-right.svg" height="40" width="40"></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<nav class="navbar navbar-expand-lg bg-header navbar-dark ">
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto" *ngIf="userRoleId == '3'">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/restaurantAssociated" routerLinkActive="active">Restaurant-Associates</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" routerLinkActive="active">
+          Orders
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#" routerLink="/scheduleOrder" routerLinkActive="active">Schedule order</a>
+          <a class="dropdown-item" href="#" routerLink="/orders" routerLinkActive="active">Delivery order</a>
+        </div>
+      </li>
+    </ul>
+    <ul class="navbar-nav" *ngIf="userRoleId == '3'">
+      <li><a class="nav-link"> {{userName }}</a></li>
+      <li><a class="nav-link" >Role Id : {{3}}</a></li>
+      <li><a class="text"><img (click)="doLogOut()" src="assets/box-arrow-right.svg" height="40" width="40"></a>
+      </li>
+    </ul>
+  </div>
+</nav> 
+
+<!-- <nav class="navbar navbar-expand-sm bg-header navbar-dark">
+  <div class=" navbar-collapse">
+    <div class="main-nav">
+      <div class="nav-left">
+        <ul class="navbar-nav" *ngIf="userRoleId == '3'">
+          <li><a class="nav-link" routerLink="/orders" href="#" routerLinkActive="active">Orders</a></li>
+          <ul class="dropdown">
+            <li><a href="#" routerLink="/scheduleOrder" >Schedule order</a></li>
+            <li><a href="#" routerLink="/orders">Delivery order</a></li>
+          </ul>
+          <li><a class="nav-link" routerLink="/restaurantAssociated" routerLinkActive="active">Restaurant-Associates</a></li>
+          <li><a class="nav-link" routerLink="/profile" routerLinkActive="active">Profile</a></li>
+        </ul>
+      </div>
+      <div class="nav-right">
+        <ul class="navbar-nav" *ngIf="userRoleId == '3'">
+          <li><a class="nav-link" routerLinkActive="active"> {{userName }}</a></li>
+          <li><a class="nav-link" routerLinkActive="active">Role Id : {{3}}</a></li>
+          <li><a class="text"><img (click)="doLogOut()" src="assets/box-arrow-right.svg" height="40" width="40"></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav> -->
+
+<nav class="navbar navbar-expand-sm bg-header navbar-dark">
+  <div class=" navbar-collapse">
+    <div class="main-nav">
+      <div class="nav-left">
+        <ul class="navbar-nav" *ngIf="userRoleId == '4'">
+          <li><a class="nav-link" routerLink="/userRestaurant" routerLinkActive="active">Restaurants</a></li>
+          <li><a class="nav-link" routerLink="/blockRestaurant" routerLinkActive="active">Blocked-Restaurants</a></li>
+          <li><a class="nav-link" routerLink="/orderHistory" routerLinkActive="active">Order-History</a></li>
+          <li><a class="nav-link" routerLink="/profile" routerLinkActive="active">Profile</a></li>
+        </ul>
+      </div>
+      <div class="nav-right">
+        <ul class="navbar-nav" *ngIf="userRoleId == '4'">
+          <li><a><input type="button" (click)="cartItem()"  class="text1" data-toggle="modal"  data-target="#exampleModal5"  name="submit" value="Cart Items {{cartCount}}" class="button"></a></li>
+          <li><a class="nav-link" routerLinkActive="active"> {{userName }}</a></li>
+          <li><a class="nav-link" routerLinkActive="active">Role Id : {{4}}</a></li>
+          <li><a class="text"><img (click)="doLogOut()" src="assets/box-arrow-right.svg" height="40" width="40"></a>
+          </li>
+        </ul>
+      </div>         
+    </div>
+  </div>
+</nav>
+<div *ngIf="isShowCartItems">
+<div class="modal fade" id="exampleModal5" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+              <table class="timetable_sub"  class="table " >
+                <thead>
+                  <tr>
+                    <th>SL No.</th>	
+                    <th>Product</th>
+                    <th>Quantity</th>
+                    <th>Product Name</th>
+                    <th>Price</th>
+                  </tr>
+                </thead>
+                <tbody>
+                <tr class="rem1" *ngFor="let cart of myCartItem; index as i">
+                  <td class="invert">{{i+1}}</td>
+                  <td class="invert-image">
+                    <a href="single.html"><img src="assets/foodImages/{{cart.foodImage}}" height="150" width="150" alt=" " class="img-responsive"></a></td>
+                  <td class="invert">
+                     <div class="quantity"> 
+                      <div class="quantity-select"> 
+                        <button (click)="updateCartItems(cart._id, cart.cartQty+1, cart.foodPrice)">+</button>
+								    	 <div class="entry value"><span>{{cart.cartQty}}</span></div>                      
+                        &nbsp;<button (click)="updateCartItems(cart._id, cart.cartQty-1, cart.foodPrice)">-</button>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="invert">{{cart.foodName}}</td>
+                  <td class="invert">{{cart.foodPrice | currency :"INR"}}</td>
+                  <td class="invert">
+                    <div class="rem"> 
+                      <div class="close1"> </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody></table>
+              Total :<h2>{{totalCartPrice | currency :"INR"}}</h2>
+            </div>
+            <div >
+              <table class="table ">
+                <thead>
+                  <tr>
+                    <th scope="col">Delivery Boy Name</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let user of selectDeliveryBoys; index as i">
+                    <td>{{user}}</td><button (click)="selectDeliveryBoy(user)" >Delivery Boy</button>
+                  </tr >
+                </tbody>
+              </table>
+            </div>
+            <div *ngIf="placeToOrderButton">
+            <button  class="buttonSize" (click)="placeToOrder()" >Place Order</button><br>
+          </div><br>
+         
+            <h3> <p *ngIf="succesMsg" class="info">Order Placed successfully...</p></h3>
+         
+        </div>
+
+
+
+
+            <!-- <div  class="modal-body">
+              <button (click)="placeToOrder()" class="btn btn-success">Place to Order</button>
+            </div><br>
+            <div >
+              <table class="table" >
+                <thead>
+                <tr>
+                  <th>Delivery Boy</th>
+                </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let user of selectDeliveryBoys">
+                    <td>{{user.name}}</td><button (click)="selectDeliveryBoy(user)">Delivery Boy</button>
+                  </tr>
+                  <h3> <p *ngIf="isShowOrderPlaced" class="info">Order Placed successfully...</p></h3>
+                </tbody>
+              </table>
+            </div> -->
+          </div>
+        </div>
+    </div>
+
+           
+
+
+  

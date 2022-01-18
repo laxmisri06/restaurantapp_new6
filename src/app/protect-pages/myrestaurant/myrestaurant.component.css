@@ -1,0 +1,36 @@
+
+
+.fileBox{
+    display: table;
+    table-layout: fixed;
+    border-collapse: collapse;
+    width: 20%;
+    color: darkgrey;
+
+}
+
+
+.box{
+    margin:left;
+  
+    width: 30%;
+}
+
+
+.btn-button{
+    background-color: cornflowerblue;
+}
+
+
+.textColor{
+    color: darkred;
+}
+
+
+.error-block{
+    color: red;
+  }
+  
+
+
+  

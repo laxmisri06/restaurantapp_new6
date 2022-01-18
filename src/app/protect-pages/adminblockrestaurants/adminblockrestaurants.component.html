@@ -1,0 +1,20 @@
+<div >
+    <table class="table ">
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Restaurant Name</th>
+          <th scope="col">Restaurant Location</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of blockedRestauant; index as i">
+          <td>{{user.name}}</td>
+          <td>{{user.email}}</td>
+          <td>{{user.restaurantName}}</td>
+          <td>{{user.restaurantLocation}}</td>&nbsp;<button (click)="unblockedRestaurant(i)" class="color">Unblocked Restaurant</button>
+        </tr >
+      </tbody>
+    </table>
+  </div>

@@ -1,0 +1,45 @@
+<marquee behavior="scroll" class="color" direction="right">
+    <h2>Available Restaurants..!!!</h2>
+</marquee>
+<div>
+    <table class="table ">
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Restaurant Name</th>
+                <th scope="col">Restaurant Location</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of allRestaurants; index as i">
+                <td>{{user.name}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.restaurantName}}</td>
+                <td>{{user.restaurantLocation}}</td> 
+                <button (click)="showRestaurantsList(user)" class="text">Click order here...</button>&nbsp;
+                <button (click)="blockRestaurant(i)" type="button" class="text1" data-toggle="modal" data-target="#exampleModal4">
+                    Block Restaurant
+                </button>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="modal fade" id="exampleModal4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Block reason type here..</h2>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="captureForms" >
+                    <input type="text" formControlName="name"><br><br>
+                    <button (click)="captureReason()" data-dismiss="modal">Submit</button>
+                </form>
+                <!-- <textarea class="textarea" (keyup)="onKeypress($event.target.value)" name="message" id="" placeholder="reason type here..."></textarea><br><br>
+                <button (click)="getReview()">Submit</button> -->
+            </div>
+        </div>
+    </div>
+</div>

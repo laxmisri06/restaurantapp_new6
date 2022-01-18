@@ -1,0 +1,13 @@
+
+<table class="table ">
+    <thead>
+      <tr>
+        <th scope="col">Restaruant Name</th>
+      </tr>
+    </thead>
+    <tbody >
+      <tr *ngFor ="let user of restaurantArray">
+        <td>{{user.userDetails[0].restaurantName}}</td>
+      </tr>
+    </tbody>
+  </table>

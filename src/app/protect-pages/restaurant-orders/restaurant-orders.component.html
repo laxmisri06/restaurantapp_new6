@@ -1,0 +1,19 @@
+
+<table class="table ">
+    <thead>
+      <tr>
+        <th scope="col">Resetaurant Name</th>
+        <th scope="col">Food Details</th>
+        <th scope="col">Food Price</th>
+        <th scope="col">Food Image</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let orders of finalArray">
+        <td>{{restaurantName}} </td>
+        <td>{{orders.foodName}}({{orders.cartQty}}) - {{orders.cartQty * orders.foodPrice | currency:"INR"}} </td>
+        <td>{{orders.foodPrice | currency:"INR"}}</td>
+        <td><img src="assets/foodImages/{{orders.foodImage}}" height="150" width="150"></td>
+      </tr>
+    </tbody>
+  </table>

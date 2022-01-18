@@ -1,0 +1,21 @@
+
+.box{
+    margin: 0 auto; 
+    width:250px;
+    width: 30%;
+}
+
+
+.card{
+    text-align: center;
+}
+
+.textColor{
+    color: darkred;
+}
+
+
+.error-block{
+    color: red;
+  }
+  

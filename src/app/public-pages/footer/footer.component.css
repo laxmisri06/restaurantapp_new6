@@ -1,0 +1,19 @@
+
+.footer
+{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color:navy;
+    color: white;
+    text-align: center;    
+  
+  
+}
+
+.textSize
+{
+    font-size: 1.25rem; 
+    font-family: Arial;
+}

@@ -1,0 +1,17 @@
+
+<table class="table ">
+    <thead>
+      <tr>
+        <th scope="col">Restaruant Name</th>
+        <th scope="col">User Name</th>
+        <th scope="col">Delivery Time</th>
+      </tr>
+    </thead> 
+    <tbody>
+      <tr *ngFor="let user of finalUser">
+        <td>{{user.userDetails[0].restaurantName}}</td>  
+        <td>{{user.userName}}</td>  
+        <td>{{user.deliveryTime |  date:"medium"}}</td>     
+      </tr>
+    </tbody>
+  </table>

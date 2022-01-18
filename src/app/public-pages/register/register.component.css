@@ -1,0 +1,32 @@
+.box{
+ margin: 0 auto; 
+width:250px;
+width: 30%;
+}
+  .color{
+      background-color:slategrey
+  }
+
+.form-select{
+  height: 45px;
+}
+
+.textColor{
+  color: darkred;
+}
+
+
+.card{
+  text-align: center;
+} 
+
+.ng-invalid.ng-touched{
+  border-color: red;
+}
+
+.error-block{
+  color: red;
+}
+
+
+   

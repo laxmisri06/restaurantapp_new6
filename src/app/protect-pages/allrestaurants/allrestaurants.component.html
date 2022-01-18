@@ -1,0 +1,24 @@
+<div >
+    <table class="table ">
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Restaurant Name</th>
+          <th scope="col">Restaurant Location</th>
+          <th scope="col">No.of Orders</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of allRestaurants;index as i">
+          <td>{{user.name}}</td>
+          <td>{{user.email}}</td>
+          <td>{{user.restaurantName}}</td>
+          <td>{{user.restaurantLocation}}</td>
+          <td>{{user.check}}</td>
+         &nbsp;<button (click)="blockRestaurant(i)" class="color" >Block Restaurant</button>
+        </tr >
+      </tbody>
+    </table>
+  </div>

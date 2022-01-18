@@ -1,0 +1,194 @@
+<div *ngIf="loggedInUser == '1'">
+  <table class="table ">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Password</th>
+        <th scope="col">ConfirmPassword</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of userArray ; index as i">
+        <td>{{user.name}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.password}}</td>
+        <td>{{user.confirmPassword}}</td><button (click)="editProfile(i)" class="btn-button" type="button" 
+          data-toggle="modal" data-target="#exampleModal1">
+          Edit
+        </button>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Edit Profile</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="editForm">
+          Name :<input type="text" formControlName="name"><br><br>
+          Email :<input type="text" formControlName="email"><br><br>
+          Password:<input type="text" formControlName="password"><br><br>
+          Confrim Password:<input type="text" formControlName="confirmPassword"><br><br>
+          <button class="btn btn-primary" data-dismiss="modal" (click)="updateProfile()">Update</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="loggedInUser == '2'">
+  <table class="table ">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Password</th>
+        <th scope="col">ConfirmPassword</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of userArray; index as i">
+        <td>{{user.name}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.password}}</td>
+        <td>{{user.confirmPassword}}</td>
+       <button (click)="editProfile(i)" type="button" class="btn-button"
+          data-toggle="modal" data-target="#exampleModal2">
+          Edit
+        </button>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Edit Profile</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="editForm">
+          Name :<input type="text" formControlName="name"><br><br>
+          Email :<input type="text" formControlName="email"><br><br>
+          Password:<input type="text" formControlName="password"><br><br>
+          Confrim Password:<input type="text" formControlName="confirmPassword"><br><br>
+          <button class="btn btn-primary" data-dismiss="modal" (click)="updateProfile()">Update</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="loggedInUser == '3'">
+  <table class="table ">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Password</th>
+        <th scope="col">ConfirmPassword</th>
+        <th scope="col">Phone Number</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of userArray; index as i">
+        <td>{{user.name}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.password}}</td>
+        <td>{{user.confirmPassword}}</td>
+        <td>{{user.phoneNumber}}</td><button (click)="editProfile(i)" type="button" class="btn-button"
+          data-toggle="modal" data-target="#exampleModal3">
+          Edit
+        </button>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Edit Profile</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="editForm">
+          Name :<input type="text" formControlName="name"><br><br>
+          Email :<input type="text" formControlName="email"><br><br>
+          Password:<input type="text" formControlName="password"><br><br>
+          Confrim Password:<input type="text" formControlName="confirmPassword"><br><br>
+          Phone Number:<input type="text" formControlName="phoneNumber"><br><br>
+          <button class="btn btn-primary" data-dismiss="modal" (click)="updateProfile()">Update</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="loggedInUser == '4'">
+  <table class="table ">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Password</th>
+        <th scope="col">ConfirmPassword</th>
+        <th scope="col">Phone Number</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of userArray; index as i">
+        <td>{{user.name}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.password}}</td>
+        <td>{{user.confirmPassword}}</td>
+        <td>{{user.phoneNumber}}</td><button (click)="editProfile(i)" type="button" class="btn-button"
+          data-toggle="modal" data-target="#exampleModal4">
+          Edit
+        </button>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="modal fade" id="exampleModal4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Edit Profile</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="editForm">
+          Name :<input type="text" formControlName="name"><br><br>
+          Email :<input type="text" formControlName="email"><br><br>
+          Password:<input type="text" formControlName="password"><br><br>
+          Confrim Password:<input type="text" formControlName="confirmPassword"><br><br>
+          Phone Number:<input type="text" formControlName="phoneNumber"><br><br>
+          <button class="btn btn-primary" data-dismiss="modal" (click)="updateProfile()">Update</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,102 @@
+<div class="card">
+    <h2 class="textColor">REGISTER</h2>
+</div>
+<br>
+<div class="box">
+    <form [formGroup]="registerForm">
+        <div>
+            <div class="text">
+                <div class="col-8 mt-2" class="textBox">
+                    <select size="1" (change)="onChange($event.target.value)" class="form-select">
+                        <option placeholder="Select your option" disabled selected>SELECT YOUR OPTION</option>
+                        <option class="form-control form-control-lg" value="1">SUPER ADMIN</option>
+                        <option class="form-control form-control-lg" value="2">RESTAURANT ADMIN</option>
+                        <option class="form-control form-control-lg" value="3">DELIVERY BOY</option>
+                        <option class="form-control form-control-lg" value="4">USER</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <br>
+        <!-- Name -->
+        <div class="form-outline mb-4" class="textBox">
+            <input type="text" formControlName="name" class="form-control form-control-lg" placeholder="USER NAME" />
+            <p *ngIf="!registerForm.get('name').valid && (registerForm.get('name').touched || userSubmited)"
+                class="error-block">
+                Please Enter User Name
+            </p>
+        </div><br>
+        <!-- email  -->
+        <div class="form-outline mb-4" class="textBox">
+            <input type="email" formControlName="email" class="form-control form-control-lg" placeholder="EMAIL ID" />
+            <p *ngIf="!registerForm.get('email').valid && (registerForm.get('email').touched || userSubmited)"
+                class="error-block">
+                Please enter Valid mail Id
+            </p>
+        </div><br>
+        <!-- Password  -->
+        <div class="form-outline mb-3" class="textBox">
+            <input type="password" formControlName="password" class="form-control form-control-lg"
+                placeholder="PASSWORD" />
+            <span *ngIf="!registerForm.get('password').valid && (registerForm.get('password').touched || userSubmited)"
+                class="error-block">
+                <span *ngIf="registerForm.get('password').errors['required']">
+                    Minimum eight characters, at least one letter, one number and one special character:
+                </span>
+                <span *ngIf="registerForm.get('password').errors.minlength">
+                    Please Should 4 character
+                </span>
+            </span>
+        </div><br>
+        <!-- Confirm Password  -->
+        <div class="form-outline mb-3" class="textBox">
+            <input type="Password" formControlName="confirmPassword" class="form-control form-control-lg"
+                placeholder="CONFIRM PASSWORD" />
+            <span
+                *ngIf="!registerForm.get('confirmPassword').valid && (registerForm.get('confirmPassword').touched || userSubmited)"
+                class="error-block">
+                <span *ngIf="registerForm.get('confirmPassword').hasError('required')">
+                    Please re-enter the password
+                </span>
+            </span>
+            <span class="error-block"
+                *ngIf="registerForm.get('password').value != registerForm.get('confirmPassword').value && registerForm.get('confirmPassword').value != ''">
+                Password does not match</span>
+
+        </div><br>
+        <!-- restaurant name -->
+        <div *ngIf="roleIndex == 2" class="form-outline mb-4" class="textBox">
+            <input type="text" formControlName="restaurantName" class="form-control form-control-lg"
+                placeholder="RESTAURANT NAME" />
+            <p *ngIf="!registerForm.get('restaurantName').valid && (registerForm.get('restaurantName').touched || userSubmited)"
+                class="error-block">
+                Please enter restaurant Name
+            </p>
+        </div>
+
+        <!-- restaurant location -->
+        <br>
+        <div *ngIf="roleIndex == 2 || roleIndex == 3 || roleIndex == 4 " class="form-outline mb-4" class="textBox">
+            <input type="text" formControlName="restaurantLocation" class="form-control form-control-lg"
+                placeholder="LOCATION" />
+            <p *ngIf="!registerForm.get('restaurantLocation').valid && (registerForm.get('restaurantLocation').touched || userSubmited)"
+                class="error-block">
+                Please enter restaurant location
+            </p>
+        </div><br>
+        <!-- phonenumber -->
+        <div *ngIf="roleIndex == 3 || roleIndex == 4 " class="form-outline mb-4" class="textBox">
+            <input type="number" formControlName="phoneNumber" class="form-control form-control-lg"
+                placeholder="PHONE NUMBER" />
+            <p *ngIf="!registerForm.get('phoneNumber').valid && (registerForm.get('phoneNumber').touched || userSubmited)"
+                class="error-block">
+                Please enter Phone Number
+            </p>
+        </div>
+        <div class="text-center text-lg-start mt-4 pt-2">
+            <button type="button" class="btn btn-success btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem;"
+                (click)="onRegister()"> Register </button>
+        </div>
+    </form>
+</div>

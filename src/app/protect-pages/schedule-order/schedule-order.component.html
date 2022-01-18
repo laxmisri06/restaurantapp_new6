@@ -1,0 +1,39 @@
+
+
+
+<!-- <table class="table ">
+    <thead>
+      <tr>
+        <th scope="col">Restaruant Name</th>
+        <th scope="col">User Name</th>
+        <th scope="col">Order Placed Time</th>
+        <th scope="col">Mark as Order</th>
+      </tr>
+    </thead>
+    <tbody class="border" *ngFor="let order of unique">
+      <tr *ngFor="let user of finalUserArray">
+        <td>{{order}}</td>
+        <td>{{user.userName}}</td>
+        <td>{{user.registerDate | date:"medium"}}</td><button (click)="markAsOrder()">Mark as Order</button> 
+      </tr>
+    </tbody>
+  </table> -->
+
+
+  <table class="table ">
+    <thead>
+      <tr>
+        <th scope="col">Restaruant Name</th>
+        <th scope="col">User Name</th>
+        <th scope="col">Order Placed Time</th>
+        <th scope="col">Mark as Order</th>
+      </tr>
+    </thead>
+    <tbody class="border" *ngFor="let order of restaurantName">
+      <tr>
+        <td>{{order.userDetails[0].restaurantName}}</td>
+        <td>{{order.userName}}</td>
+        <td>{{order.registerDate | date:"medium"}}</td><button [disabled]="order?.markAsDelivered" class="color" (click)="markAsOrder(order)">Order delivered</button> 
+      </tr>
+    </tbody>
+  </table> 

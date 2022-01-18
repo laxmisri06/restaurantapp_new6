@@ -1,0 +1,80 @@
+<br>
+<button (click)="showAndHideAddfoodItem()" class="btn btn-success">ADD FOOD</button>
+
+&nbsp; &nbsp; <button (click)="showRestaurantItems()" class="btn btn-success">SHOW FOOD LIST</button>
+
+<br><br>
+<div class="box" *ngIf="isAddFoodItemsShow">
+  <form [formGroup]="myFoodForm">
+
+    <div class="form-outline mb-4" class="textBox">
+      <input type="text" formControlName="foodName" id="form3Example3" class="form-control form-control-lg"
+        placeholder="FOOD NAME" />
+    </div><br>
+    <div class="form-outline mb-3" class="textBox">
+      <input type="text" formControlName="foodPrice" id="form3Example4" class="form-control form-control-lg"
+        placeholder="FOOD PRICE" />
+        <div  class="error-block" *ngIf="(myFoodForm.get('foodPrice').touched|| myFoodForm.get('foodPrice').dirty) && myFoodForm.get('foodPrice').errors?.pattern">
+          Accept number Only
+        </div>
+    </div><br>
+    <div class="form-outline mb-3" class="textBox">
+      <input type="file" formControlName="foodImage" (change)="foodImage($event)" id="form3Example4"
+        class="form-control form-control-lg" />
+        <div class="btn btn-danger" *ngIf="myFoodForm?.get('foodImage').errors?.required">
+          Image mandatory
+        </div> 
+    </div>
+    <div class="text-center text-lg-start mt-4 pt-2">
+      <button type="button" class="btn btn-primary btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem;"
+        (click)="addFood()" > SUMBIT </button>
+    </div>
+  </form> 
+</div>
+
+
+<div *ngIf="isShowFoodItems">
+  <table class="table ">
+    <thead>
+      <tr>
+        <th scope="col">Food Name</th>
+        <th scope="col">Food Price</th>
+        <th scope="col">Food Image</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of uniqueRestaurantView; index as i">
+        <td>{{user.foodName}}</td>
+        <td>{{user.foodPrice | currency:"INR"}}</td>
+        <td><img src="assets/foodImages/{{user.foodImage}}" height="150" width="150"></td><button (click)="editFood(i)" type="button" class="btn-button"
+          data-toggle="modal" data-target="#exampleModal2">
+          Edit
+        </button>
+        
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Edit Profile</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="myFoodForm">
+          Food Name :<input type="text" formControlName="foodName"><br><br>
+          Food Price :<input type="text" formControlName="foodPrice"><br><br>
+          Food Image:<input type="file" formControlName="foodImage"  (change)="foodImage($event)" ><br><br>
+          <button class="btn btn-primary" data-dismiss="modal" (click)="updateFood()" >Update</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
